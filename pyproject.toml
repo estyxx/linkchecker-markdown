@@ -1,8 +1,41 @@
+[tool.poetry]
+name = "linkcheckmd"
+version = "1.4.0"
+description = "Check links for Markdown-based site"
+authors = ["Michael Hirsch, Ph.D. <scivision@users.noreply.github.com>"]
+license = "MIT"
+
+readme = "README.md"
+keywords = ["markdown", "jekyll", "hugo"]
+repository = "https://github.com/scivision/linkchecker-markdown"
+
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Environment :: Console",
+  "Framework :: AsyncIO",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Topic :: Internet :: WWW/HTTP :: Site Management :: Link Checking"
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+aiohttp = "^3.3"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.3"
+flake8 = "^3.9.0"
+flake8-bugbear = "^21.4.3"
+flake8-builtins = "^1.5.3"
+flake8-blind-except = "^0.2.0"
+pytest-coverage = "^0.0"
+
+[tool.poetry.extras]
+mysql = ["requests"]
+
+
 [build-system]
-requires = ["setuptools", "wheel"]
-
-[tool.black]
-line-length = 100
-
-[tool.pytest.ini_options]
-addopts = "-ra -v"
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
